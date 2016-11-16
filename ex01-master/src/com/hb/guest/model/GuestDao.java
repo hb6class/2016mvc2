@@ -20,6 +20,21 @@ public class GuestDao {
 				, "sa", "");
 	}
 	
+	public void insertOne(GuestDto dto) throws IllegalArgumentException,SQLException{
+		String sql ="insert into guest values (?,?,sysdate,?)";
+		pstmt=conn.prepareStatement(sql);
+		pstmt.setInt(1, dto.getSabun());
+		pstmt.setString(2, dto.getName());
+		pstmt.setInt(3, dto.getPay());
+		int result= pstmt.executeUpdate();
+		if(pstmt!=null)pstmt.close();
+		if(conn!=null)conn.close();
+		if(result<1){
+			throw new IllegalArgumentException();   
+		}
+		
+	}
+	
 	public ArrayList selectAll() throws SQLException{
 		ArrayList list = new ArrayList();
 		

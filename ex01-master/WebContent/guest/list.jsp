@@ -2,6 +2,7 @@
 <%@page import="com.hb.guest.model.GuestDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,16 +19,20 @@
 ArrayList list = (ArrayList) request.getAttribute("alist");
 for(int i=0; i<list.size(); i++ ){
 	GuestDto dto=(GuestDto)list.get(i);
-	out.print(dto.getSabun());
-	out.print(",");
-	out.print(dto.getName());
-	out.print(",");
-	out.print(dto.getNalja());
-	out.print(",");
-	out.print(dto.getPay());
-	out.println("<br/>");
-}
-
+	%>
+	<p>
+	<%=dto.getSabun()%>/<%=dto.getName()%>/<%=dto.getNalja()%>/<%=dto.getPay()%>
+	</p>
+	<%
+	}
 %>
+<hr/>
+<p><a href="./add.do">add</a></p>
+<hr/>
+
+<c:forEach items="${alist }" var="dto">
+	<p>${dto.sabun} / ${dto.name } / ${dto.nalja } / ${dto.pay }</p>
+</c:forEach>
+
 </body>
 </html>

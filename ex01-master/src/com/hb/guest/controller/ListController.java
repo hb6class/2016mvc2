@@ -18,7 +18,7 @@ public class ListController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		GuestDao dao;
-		ArrayList list=null;
+		ArrayList<GuestDto> list=null;
 		try {
 			dao = new GuestDao();
 			list = dao.selectAll();
