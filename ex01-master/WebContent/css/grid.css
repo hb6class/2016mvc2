@@ -1,0 +1,82 @@
+*{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+					margin: 0px auto;
+				}	
+        
+        .grid1,.grid2,.grid3
+                ,.grid4,.grid5,.grid6
+                ,.grid7,.grid8,.grid9
+                ,.grid10,.grid11,.grid12{
+                    float: left;
+                    border: 1px red solid;
+                    box-sizing: border-box;
+                }
+        
+        @media screen and (max-width:400px){
+            /*모바일*/    
+            .container{
+					width: 100%;
+				}	
+            .container .mgrid1{width: 8.333%;}
+            .container .mgrid2{width: 16.666%;}
+            .container .mgrid3{width: 25%;}
+            .container .mgrid4{width: 33.333%;}
+            .container .mgrid5{width: 41.666%;}
+            .container .mgrid6{width: 50%;}
+            .container .mgrid7{width: 58.333%;}
+            .container .mgrid8{width: 66.666%;}
+            .container .mgrid9{width: 75%;}
+            .container .mgrid10{width: 83.333%;}
+            .container .mgrid11{width: 91.666%;}
+            .container .mgrid12{width: 100%;}
+            .mrow{clear: both;}
+            .mclear{
+                display: none;
+            }
+            .mbtn{
+                width: 80px;
+                height: 80px;
+                border: 1px red solid;
+                box-sizing: border-box;
+                border-radius: 5px;
+                margin: 5px;
+                float: right;
+                background-color: gray;
+            }
+            .mbtn>div{
+                width: 50px;
+                border: 3px red solid;
+                margin-top: 14px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .menu>div:nth-child(3),
+            .menu>div:nth-child(4),
+            .menu>div:nth-child(5),
+            .menu>div:nth-child(6){
+                display: none;
+            }
+        }
+        
+        @media screen and (min-width:401px){
+             /*pc용*/
+            .container{
+                width: 900px;
+            }
+            .container .grid1{width: 75px;}
+            .container .grid2{width: 150px;}
+            .container .grid3{width: 225px;}
+            .container .grid4{width: 300px;}
+            .container .grid5{width: 375px;}
+            .container .grid6{width: 450px;}
+            .container .grid7{width: 525px;}
+            .container .grid8{width: 600px;}
+            .container .grid9{width: 675px;}
+            .container .grid10{width: 750px;}
+            .container .grid11{width: 825px;}
+            .container .grid12{width: 900px;}
+            .row{clear: both;}
+        }

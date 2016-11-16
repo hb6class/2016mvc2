@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style></style>
+<link href="/ex01/css/grid.css" rel="stylesheet">
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <title>Insert title here</title>
@@ -29,10 +29,24 @@ for(int i=0; i<list.size(); i++ ){
 <hr/>
 <p><a href="./add.do">add</a></p>
 <hr/>
-
+<div class="container">
 <c:forEach items="${alist }" var="dto">
-	<p>${dto.sabun} / ${dto.name } / ${dto.nalja } / ${dto.pay }</p>
+	<div class="row">
+		<div class="grid3"> ${dto.sabun} </div>
+		<div class="grid3"> ${dto.name } </div>
+		<div class="grid3"> ${dto.nalja } </div>
+		<div class="grid3"> ${dto.pay } </p>
+	</div>
 </c:forEach>
-
+</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

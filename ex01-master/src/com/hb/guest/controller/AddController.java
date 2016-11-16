@@ -15,7 +15,7 @@ import com.hb.guest.model.GuestDto;
 public class AddController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("./add.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/guest/add.jsp").forward(request, response);
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
