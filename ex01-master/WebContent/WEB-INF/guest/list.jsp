@@ -31,12 +31,14 @@ for(int i=0; i<list.size(); i++ ){
 <hr/>
 <div class="container">
 <c:forEach items="${alist }" var="dto">
+	<a href="./detail.do?idx=${dto.sabun}">
 	<div class="row">
 		<div class="grid3"> ${dto.sabun} </div>
 		<div class="grid3"> ${dto.name } </div>
 		<div class="grid3"> ${dto.nalja } </div>
 		<div class="grid3"> ${dto.pay } </p>
 	</div>
+	</a>
 </c:forEach>
 </div>
 </body>

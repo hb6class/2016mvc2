@@ -35,10 +35,32 @@ public class GuestDao {
 		
 	}
 	
-	public ArrayList selectAll() throws SQLException{
-		ArrayList list = new ArrayList();
+	public GuestDto selectOne(int sabun) throws SQLException{
+		String sql="SELECT * FROM GUEST WHERE SABUN=?";
+
+		GuestDto dto=null;
 		
+		pstmt=conn.prepareStatement(sql);
+		pstmt.setInt(1, sabun);
+		rs=pstmt.executeQuery();
+		
+		if(rs.next()){
+			dto = new GuestDto();
+			dto.setSabun(rs.getInt("sabun"));
+			dto.setName(rs.getString("name"));
+			dto.setNalja(rs.getDate("nalja"));
+			dto.setPay(rs.getInt("pay"));
+		}
+		if(rs!=null)rs.close();
+		if(pstmt!=null)pstmt.close();
+		if(conn!=null)conn.close();
+		
+		return dto;
+	}
+	public ArrayList selectAll() throws SQLException{
 		String sql="SELECT * FROM GUEST";
+		
+		ArrayList list = new ArrayList();
 		pstmt=conn.prepareStatement(sql);
 		rs=pstmt.executeQuery();
 		
