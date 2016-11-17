@@ -78,4 +78,30 @@ public class GuestDao {
 		
 		return list;
 	}
+
+	public void updateOne(GuestDto dto) throws SQLException {
+		String sql = "UPDATE GUEST SET NAME=?,PAY=? WHERE SABUN=?";
+		try{
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getName());
+			pstmt.setInt(2, dto.getPay());
+			pstmt.setInt(3, dto.getSabun());
+			pstmt.executeUpdate();
+		}finally{
+			if(pstmt!=null)pstmt.close();
+			if(conn!=null)conn.close();
+		}
+	}
+
+	public void deleteOne(int sabun) throws SQLException {
+		String sql = "DELETE FROM GUEST WHERE SABUN=?";
+		try{
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, sabun);
+			pstmt.executeUpdate();
+		}finally{
+			if(pstmt!=null)pstmt.close();
+			if(conn!=null)conn.close();
+		}
+	}
 }

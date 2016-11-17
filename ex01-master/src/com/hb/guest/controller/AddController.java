@@ -15,6 +15,8 @@ import com.hb.guest.model.GuestDto;
 public class AddController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		request.setAttribute("title", "ют╥б");
 		request.getRequestDispatcher("/WEB-INF/guest/add.jsp").forward(request, response);
 	}
 	@Override

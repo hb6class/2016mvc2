@@ -12,16 +12,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>입력 페이지</h1>
-	<form method="post">
+	<h1>${title } 페이지</h1>
+	<form method="post" ${action } >
 		<p>
-		<label for="sabun">sabun</label><input type="text" name="sabun" id="sabun"  />
+		<label for="sabun">sabun</label>
+		<input type="text" name="sabun" id="sabun"  value="${bean.sabun }" />
 		</p>
 		<p>
-		<label for="name">name</label><input type="text" name="name" id="name"  />
+		<label for="name">name</label>
+		<input type="text" name="name" id="name" value="${bean.name }" />
 		</p>
 		<p>
-		<label for="pay">pay</label><input type="text" name="pay" id="pay"  />
+		<label for="pay">pay</label>
+		<input type="text" name="pay" id="pay" value="${bean.pay }" />
 		</p>
 		<p>
 			<button type="submit">입 력</button>
