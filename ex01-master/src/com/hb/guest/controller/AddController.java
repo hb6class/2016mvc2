@@ -15,7 +15,16 @@ import com.hb.guest.model.GuestDto;
 public class AddController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		Object ses = request.getSession().getAttribute("result");
+		if(ses==null){
+			response.sendRedirect(request.getContextPath()+"/user/login.do");
+			return;
+		}
+		boolean sess = (Boolean)ses;		
+		if(sess){
+			response.sendRedirect(request.getContextPath()+"/user/login.do");
+			return;
+		}
 		request.setAttribute("title", "ют╥б");
 		request.getRequestDispatcher("/WEB-INF/guest/add.jsp").forward(request, response);
 	}

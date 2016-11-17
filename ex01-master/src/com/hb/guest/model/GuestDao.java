@@ -104,4 +104,20 @@ public class GuestDao {
 			if(conn!=null)conn.close();
 		}
 	}
+
+	public boolean loginChk(int sabun, String name) throws SQLException {
+		String sql ="select count(*) as cnt from guest where sabun=? and name=?";
+		int result=0;
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, sabun);
+		pstmt.setString(2, name);
+		rs=pstmt.executeQuery();
+		if(rs.next()){
+			result = rs.getInt("cnt");
+		}
+		if(result>0){
+			return true;
+		}
+		return false;
+	}
 }
